@@ -1,6 +1,6 @@
 {
 "request": {
-    "urlPattern": "petstore.swagger.io/v2/([a-z]*)",
+    "urlPattern": "petstore.swagger.io/v2/pet",
     "method": "POST",
     "bodyPatterns": [
       {

@@ -1,7 +1,7 @@
 {
     "request": {
-        "urlPattern": "petstore.swagger.io/v2/([a-z]*)",
-        "method": "POST",
+        "urlPattern": "petstore.swagger.io/v2/pet",
+        "method": "DELETE",
         "bodyPatterns": [
           {
             "matchesJsonPath": "$.status"

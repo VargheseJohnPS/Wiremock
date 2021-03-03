@@ -1,24 +1,25 @@
 {
-    "request": {
-        "urlPattern": "petstore.swagger.io/v2/([a-z]*)",
-        "method": "POST",
-        "bodyPatterns": [
-          {
-            "matchesJsonPath": "$.status"
+  "request": {
+      "urlPattern": "/petstore.swagger.io/v2/pet/1",
+      "method": "GET"
+     
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+          "id": 1,
+          "category": {
+            "id": 0
           },
-          {
-            "matchesJsonPath": "$.tags[:1]..name"
-          },
-          {
-            "matchesJsonPath": "$.category..name"
-          }
-        ]
+          "name": "ff",
+          "photoUrls": [],
+          "tags": [],
+          "status": "1"
       },
-      "response": {
-        "status": 200,
-        "headers": {
-          "Content-Type": "application/json",
-          "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
-        }
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
       }
     }
+  }
+  
