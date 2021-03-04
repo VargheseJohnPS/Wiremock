@@ -1,0 +1,26 @@
+{
+    "request": {
+      "urlPathPattern": "/petstore.swagger.io/v2/user/login",
+      "method": "GET",
+      "queryParameters": {
+        "username": {
+          "matches": "[a-z]+"
+        },
+        "password": {
+          "matches": "[a-z][0-9]+"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "code": 200,
+        "type": "unknown",
+        "message": "logged in user session:1614847596551"
+          },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }

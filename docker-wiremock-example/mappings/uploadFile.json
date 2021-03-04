@@ -1,37 +1,18 @@
 {
     "request": {
-    "urlPattern": "/oms-inventory/v1/[a-z]{2}/[a-z]{2}/l3-stocks/booking-async",
-    "method": "POST",
-    "bodyPatterns": [
-      {
-        "matchesJsonPath": "$.integrated_order_no"
-      },
-      {
-        "matchesJsonPath": "$.split_order_list[0].split_detail_list"
-      },
-      {
-        "matchesJsonPath": "$.split_order_list[1].split_detail_list"
-      },
-      {
-        "matchesJsonPath": "$.split_order_list[2].split_detail_list"
-      },
-      {
-        "matchesJsonPath": "$.split_order_list[0].shipment_location_id"
-      },
-      {
-        "matchesJsonPath": "$.split_order_list[1].shipment_location_id"
-      },
-      {
-        "matchesJsonPath": "$.split_order_list[2].shipment_location_id"
-      }
-    ]
-  },
-  "response": {
+    "urlPattern": "/petstore.swagger.io/v2/pet/[0-9]{1}/uploadImage",
+    "method": "POST"
+    },
+
+   "response": {
     "status": 200,
+    "jsonBody": {
+      "code": 200,
+      "type": "unknown",
+      "message": "additionalMetadata: null\nFile uploaded to ./filename.type, filesize bytes"
+    },
     "headers": {
-      "Content-Language": "en-US",
-      "X-Amzn-Trace-Id": "Root=1-1550634978-876cac1f-ce5d-428e-927a-c8fa558aed4e",
-      "Content-Type": "application/json;charset=UTF-8",
+      "Content-Type": "application/json",
       "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
     }
   }

@@ -1,0 +1,32 @@
+{
+    "request": {
+      "urlPattern": "/petstore.swagger.io/v2/store/order",
+      "method": "POST",
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.petId"
+        },
+        {
+          "matchesJsonPath" : "$[?(@.status == 'placed')]"
+        },
+        {
+          "matchesJsonPath": "$.complete"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "id": "id",
+        "petId": "{{jsonPath request.body '$.petId'}}",
+        "quantity": "quantity",
+        "shipDate": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}",
+        "status": "placed",
+        "complete": true
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }

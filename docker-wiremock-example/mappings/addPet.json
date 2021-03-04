@@ -1,10 +1,15 @@
 {
 "request": {
-    "urlPattern": "petstore.swagger.io/v2/pet",
+    "url": "/petstore.swagger.io/v2/pet",
     "method": "POST",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+       }
+     },
     "bodyPatterns": [
       {
-        "matchesJsonPath": "$.status"
+        "matchesJsonPath" : "$[?(@.status == 'available')]"
       },
       {
         "matchesJsonPath": "$.tags[:1]..name"
@@ -13,9 +18,28 @@
         "matchesJsonPath": "$.category..name"
       }
     ]
+    
   },
   "response": {
     "status": 200,
+    "jsonBody": {
+      "id": "{{jsonPath request.body '$.id'}}",
+      "category": {
+      "id": 0,
+      "name": "string"
+        },
+      "name": "{{jsonPath request.body '$.name'}}",
+      "photoUrls": [
+          "string"
+          ],
+      "tags": [
+          {
+          "id": 0,
+          "name": "{{jsonPath request.body '$..tags..[:2].name'}}"
+            }
+          ],
+        "status": "{{jsonPath request.body '$.status'}}"
+  },
     "headers": {
       "Content-Type": "application/json",
       "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"

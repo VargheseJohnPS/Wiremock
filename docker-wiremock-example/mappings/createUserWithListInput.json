@@ -1,0 +1,32 @@
+{
+    "request": {
+      "urlPathPattern": "/petstore.swagger.io/v2/user/createWithList",
+      "method": "POST",
+      "bodyPatterns": [
+        {
+            "matchesJsonPath": "$..username"
+          },
+          {
+            "matchesJsonPath": "$..email"
+          },
+          {
+            "matchesJsonPath" : "$[?(@.userStatus == 0)]"
+          },
+          {
+            "matchesJsonPath": "$..password"
+          }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "code": 200,
+        "type": "unknown",
+        "message": "ok"
+        },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }

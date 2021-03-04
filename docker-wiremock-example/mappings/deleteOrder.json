@@ -1,0 +1,18 @@
+{
+    "request": {
+      "urlPattern": "/petstore.swagger.io/v2/store/order/[0-9]{1}",
+      "method": "DELETE"
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "code": 200,
+        "type": "unknown",
+        "message": "{{request.pathSegments.[4]}}"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }

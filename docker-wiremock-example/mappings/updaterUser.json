@@ -1,0 +1,29 @@
+{
+    "request": {
+      "urlPattern": "/petstore.swagger.io/v2/user/[a-z]+",
+      "method": "PUT",
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.username"
+        },
+        {
+          "matchesJsonPath": "$.email"
+        },
+        {
+          "matchesJsonPath": "$.password"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "code": 200,
+        "type": "unknown",
+        "message": "9727336838363767"
+          },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }

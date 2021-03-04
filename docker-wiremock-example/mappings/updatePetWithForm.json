@@ -1,21 +1,15 @@
 {
     "request": {
-        "urlPattern": "petstore.swagger.io/v2/([a-z]*)",
-        "method": "POST",
-        "bodyPatterns": [
-          {
-            "matchesJsonPath": "$.status"
-          },
-          {
-            "matchesJsonPath": "$.tags[:1]..name"
-          },
-          {
-            "matchesJsonPath": "$.category..name"
-          }
-        ]
+        "urlPattern": "petstore.swagger.io/v2/pet/[0-9]{1}",
+        "method": "POST"
       },
       "response": {
         "status": 200,
+        "jsonBody": {
+          "code": 200,
+          "type": "unknown",
+          "message": "{{request.pathSegments.[3]}}"
+        },
         "headers": {
           "Content-Type": "application/json",
           "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"

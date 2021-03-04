@@ -1,0 +1,19 @@
+{
+    "request": {
+      "urlPattern": "/petstore.swagger.io/v2/store/inventory",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "sold": "67",
+        "string": 285,
+        "pending": 45,
+        "available": 570
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }

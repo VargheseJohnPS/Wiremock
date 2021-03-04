@@ -1,0 +1,23 @@
+{
+    "request": {
+      "urlPathPattern": "/petstore.swagger.io/v2/user/[a-z]+",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+            "id": "972822862728289",
+            "username": "{{request.pathSegments.[3]}}",
+            "firstName": "firstName",
+            "lastName": "lastName",
+            "email": "email",
+            "password": "password",
+            "phone": "phone",
+            "userStatus": 0
+          },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }

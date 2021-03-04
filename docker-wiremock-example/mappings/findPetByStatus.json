@@ -1,24 +1,57 @@
 {
-    "request": {
-        "urlPattern": "petstore.swagger.io/v2/pet",
-        "method": "DELETE",
-        "bodyPatterns": [
-          {
-            "matchesJsonPath": "$.status"
-          },
-          {
-            "matchesJsonPath": "$.tags[:1]..name"
-          },
-          {
-            "matchesJsonPath": "$.category..name"
-          }
-        ]
-      },
-      "response": {
-        "status": 200,
-        "headers": {
-          "Content-Type": "application/json",
-          "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
-        }
+  "request": {
+    "urlPathPattern": "/petstore.swagger.io/v2/pet/findByStatus",
+    "method": "GET",
+    "queryParameters": {
+      "status": {
+        "matches": "[a-z]+"
       }
     }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": 
+      [
+        {
+          "id": 9222968140497269000,
+          "category": {
+            "id": 0,
+            "name": "string"
+          },
+          "name": "fish",
+          "photoUrls": [
+            "string"
+          ],
+          "tags": [
+            {
+              "id": 0,
+              "name": "string"
+            }
+          ],
+          "status": "{{request.query.status}}"
+        },
+        {
+          "id": 9222968140497269000,
+          "category": {
+            "id": 0,
+            "name": "string"
+          },
+          "name": "fish",
+          "photoUrls": [
+            "string"
+          ],
+          "tags": [
+            {
+              "id": 0,
+              "name": "string"
+            }
+          ],
+          "status": "{{request.query.status}}"
+        }
+        ],
+    "headers": {
+      "Content-Type": "application/json",
+      "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+    }
+  }
+}

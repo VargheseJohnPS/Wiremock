@@ -1,0 +1,21 @@
+{
+    "request": {
+      "urlPattern": "/petstore.swagger.io/v2/store/order/[0-9]{1}",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "id": "{{request.pathSegments.[4]}}",
+        "petId": "4",
+        "quantity": "7",
+        "shipDate": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}",
+        "status": "placed",
+        "complete": true
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }
