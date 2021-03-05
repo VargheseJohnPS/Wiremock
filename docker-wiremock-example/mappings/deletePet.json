@@ -1,6 +1,6 @@
 {
     "request": {
-        "urlPattern": "petstore.swagger.io/v2/pet/[0-9]{6}",
+        "urlPattern": "/petstore.swagger.io/v2/pet/[0-9]{1}",
         "method": "DELETE"
         
       },

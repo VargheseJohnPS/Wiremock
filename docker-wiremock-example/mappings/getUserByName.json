@@ -1,6 +1,6 @@
 {
     "request": {
-      "urlPathPattern": "/petstore.swagger.io/v2/user/[a-z]+",
+      "urlPathPattern": "/petstore.swagger.io/v2/user/[a-zA-Z]+",
       "method": "GET"
     },
     "response": {
